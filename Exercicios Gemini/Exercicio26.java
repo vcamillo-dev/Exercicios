@@ -46,10 +46,14 @@ public class Exercicio26 {
 
             case 3:
                 System.out.println("Refrigerante - R$ 5.00");
+                
+            case 0:
+                System.out.println("Finalizando pedido até logo");
+            break;
+
+            default:
+                System.out.println("Numero invalido, insira um numero de 1 ate 3 ou 0 para sair");
         }
-
-
-
 
 
         input.close();
