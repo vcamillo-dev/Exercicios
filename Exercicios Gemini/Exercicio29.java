@@ -15,26 +15,18 @@
 
  */
 
-import java.util.Scanner;
-
 public class Exercicio29{
     public static void main(String[] arg){
-        Scanner input = new Scanner(System.in);
-
         String[] produtos =  new String[3];
-
+        
         produtos[0] = "Hamburguer";
         produtos[1] = "Batata";
         produtos[2] = "Refri";
-
-
+        
+        
         for (int i = 0 ; i < produtos.length; i++){
             System.out.println("Produto " + i + " : "  + produtos[i]);
-
+            
         }
-
-
-
-        input.close();
     }
 }

@@ -9,35 +9,33 @@
  * 6. Ao final, use um for para exibir todos os itens e o total de itens (compras.size()).
  */
 
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Exercicio31 {
     public static void main(String[] arg){
-    Scanner input = new Scanner(System.in);
-
-    ArrayList<String> compras = new ArrayList<>();
-    String produto;
-
-
-    while (true) {
-        System.out.println("Digite o produto (ou sair para finalizar)");
-        produto = input.nextLine();
-
-
-        if (produto.equalsIgnoreCase("Sair")) {
-            break;
+        try (Scanner input = new Scanner(System.in)) {
+            ArrayList<String> compras = new ArrayList<>();
+            String produto;
+            
+            
+            while (true) {
+                System.out.println("Digite o produto (ou sair para finalizar)");
+                produto = input.nextLine();
+                
+                
+                if (produto.equalsIgnoreCase("Sair")) {
+                    break;
+                }
+                compras.add(produto);
+            }
+            
+            for(int i = 0; i < compras.size(); i++){
+                System.out.println("Item " + (i+1) +": " + compras.get(i));
+            }
+            
+            System.out.println("Total de items: " + compras.size());
         }
-        compras.add(produto);
-    }
-
-    for(int i = 0; i < compras.size(); i++){
-        System.out.println("Item " + (i+1) +": " + compras.get(i));
-    }
-
-    System.out.println("Total de items: " + compras.size());
-
-    input.close();
 
 
 

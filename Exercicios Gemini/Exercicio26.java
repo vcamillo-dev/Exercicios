@@ -29,34 +29,31 @@ import java.util.Scanner;
 
 public class Exercicio26 {
     public static void main(String[] arg){
-        Scanner input = new Scanner(System.in);
-
-        int codigoProduto;        
-        System.out.println("Insira o codigo do produto de 1 ate 3");        
-        codigoProduto = input.nextInt();
-
-        switch (codigoProduto ){
-            case 1:
-                System.out.println("Cachorro quente - R$10,00");
-            break;
-
-            case 2:
-                System.out.println("X-SALADA - R$ 15.00");
-            break;
-
-            case 3:
-                System.out.println("Refrigerante - R$ 5.00");
-                
-            case 0:
-                System.out.println("Finalizando pedido até logo");
-            break;
-
-            default:
-                System.out.println("Numero invalido, insira um numero de 1 ate 3 ou 0 para sair");
+        try (Scanner input = new Scanner(System.in)) {
+            int codigoProduto;
+            System.out.println("Insira o codigo do produto de 1 ate 3");
+            codigoProduto = input.nextInt();
+            
+            switch (codigoProduto ){
+                case 1:
+                    System.out.println("Cachorro quente - R$10,00");
+                    break;
+                    
+                case 2:
+                    System.out.println("X-SALADA - R$ 15.00");
+                    break;
+                    
+                case 3:
+                    System.out.println("Refrigerante - R$ 5.00");
+                    
+                case 0:
+                    System.out.println("Finalizando pedido até logo");
+                    break;
+                    
+                default:
+                    System.out.println("Numero invalido, insira um numero de 1 ate 3 ou 0 para sair");
+            }
         }
-
-
-        input.close();
     }
     
 }

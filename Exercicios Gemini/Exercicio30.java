@@ -12,25 +12,19 @@ import java.util.Scanner;
 
 public class Exercicio30 {
     public static void main(String[] arg){
-        Scanner input = new Scanner(System.in);
-
-        String[] produtos = new String[4];
-
-        for ( int i = 0; i < produtos.length ; i++){
-            System.out.println("Insira os produtos que deseja adicionar na lista" + (i+1));
-            produtos[i] = input.nextLine();
+        try (Scanner input = new Scanner(System.in)) {
+            String[] produtos = new String[4];
+            
+            for ( int i = 0; i < produtos.length ; i++){
+                System.out.println("Insira os produtos que deseja adicionar na lista" + (i+1));
+                produtos[i] = input.nextLine();
+            }
+            
+            for (int i = 0; i < produtos.length; i ++){
+                System.out.println("Produto: "+(i+1)+produtos[i]);
+                
+            }
         }
-
-        for (int i = 0; i < produtos.length; i ++){
-            System.out.println("Produto: "+(i+1)+produtos[i]);
-
-        }
-
-
-
-
-
-    input.close();
     }
     
 }

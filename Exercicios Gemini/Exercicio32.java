@@ -10,41 +10,39 @@
  * 5. Calcule e exiba a média final.
  */
 
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Exercicio32 {
     public static void main(String[] arg){
-
-        Scanner input = new Scanner(System.in);
 
         ArrayList<Integer> notas = new ArrayList<>();
         int nota ;
         int total = 0;
 
-        while ( true ){
-            System.out.println("Insira as notas dos alunos(ou nota negativa para sair)");
-            nota = input.nextInt();
+        try (Scanner input = new Scanner(System.in)) {
+            while ( true ){
+                System.out.println("Insira as notas dos alunos(ou nota negativa para sair)");
+                nota = input.nextInt();
 
-            if ( nota < 0 ){
-                break;
+                if ( nota < 0 ){
+                    break;
+                }
+
+                notas.add(nota);
             }
-
-            notas.add(nota);
         }
 
         for (int i = 0; i < notas.size() ; i++){
             total = total + notas.get(i);                
         }
         
-        if (notas.size() > 0 ){
+        if (!notas.isEmpty() ){
             double media = (double) total / notas.size();
             System.out.println("A media total e: " + media);
         } else{
             System.out.println("Nenhuma nota foi inserida");
         }
-
-        input.close();
 
     }
     

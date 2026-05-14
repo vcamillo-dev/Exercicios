@@ -17,8 +17,11 @@
 import java.util.Scanner;
 
 public class Exercicio25 {
+    @SuppressWarnings("empty-statement")
     public static void main(String[] arg){
-        Scanner input = new Scanner(System.in);
+        try (Scanner input = new Scanner(System.in)) {
+
+       
 
         Double nota;
         Double somaNotas = 0.0;
@@ -42,5 +45,7 @@ public class Exercicio25 {
         System.out.println("A Media final do aluno é " + somaNotas/4 );
 
         input.close();
+
+        }
     }
 }

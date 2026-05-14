@@ -22,49 +22,46 @@ import java.util.Scanner;
 
 public class Exercicio28 {
     public static void main(String[] arg){
-        Scanner input = new Scanner(System.in);
-
-        int opcao;
-        int qntdItens = 0;
-        double totalCOnta =0;
-
-        do {
-            System.out.println("Selecione 1, para X-Burguer, 2-Batata, 3 Suco, ou 0 para finalizar");
-            opcao = input.nextInt();
-
-            switch(opcao){
+        try (Scanner input = new Scanner(System.in)) {
+            int opcao;
+            int qntdItens = 0;
+            double totalCOnta =0;
+            
+            do {
+                System.out.println("Selecione 1, para X-Burguer, 2-Batata, 3 Suco, ou 0 para finalizar");
+                opcao = input.nextInt();
                 
-                case 1:
-                    System.out.println("O valor do hamburguer é 20 reais");
-                    qntdItens ++;
-                    totalCOnta = totalCOnta + 20;
-                    break;
-                
-                case 2:
-                    System.out.println("O valor da batata é 15 reais");
-                    qntdItens++;
-                    totalCOnta = totalCOnta + 15;
-                    break;
-                
-                case 3:
-                    System.out.println("O valor do suco é 10 reais");
-                    qntdItens++;
-                    totalCOnta = totalCOnta+10;
-                    break;
-                
-                case 0:
-                    System.out.println("Finalizando os pedidos");
-                
-                default:
-                    System.out.println("Insira um numero valido de 1 ate 3 ou 0 para sair");
-            }
-        } while (opcao !=0);
-
-        System.out.println("O valor final dos pedidos é: " + totalCOnta);
-        System.out.println("A qntdItens é: " + qntdItens);
-
-
-        input.close();
+                switch(opcao){
+                    
+                    case 1:
+                        System.out.println("O valor do hamburguer é 20 reais");
+                        qntdItens ++;
+                        totalCOnta = totalCOnta + 20;
+                        break;
+                        
+                    case 2:
+                        System.out.println("O valor da batata é 15 reais");
+                        qntdItens++;
+                        totalCOnta = totalCOnta + 15;
+                        break;
+                        
+                    case 3:
+                        System.out.println("O valor do suco é 10 reais");
+                        qntdItens++;
+                        totalCOnta = totalCOnta+10;
+                        break;
+                        
+                    case 0:
+                        System.out.println("Finalizando os pedidos");
+                        
+                    default:
+                        System.out.println("Insira um numero valido de 1 ate 3 ou 0 para sair");
+                }
+            } while (opcao !=0);
+            
+            System.out.println("O valor final dos pedidos é: " + totalCOnta);
+            System.out.println("A qntdItens é: " + qntdItens);
+        }
     }
     
 }

@@ -8,37 +8,32 @@
  * - ENTÃO exiba: "Nome encontrado na posição " + i
  */
 
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Exercicio33 {
     public static void main(String[] arg){
-        Scanner input = new Scanner(System.in);
-
-        ArrayList<String> convidados = new ArrayList<>();
-        String convidado;
-
-        for ( int i = 0 ; i < 6 ; i ++){
-            System.out.println("Cadastre os nomes do convidados");
-            convidado = input.nextLine();
-            convidados.add(convidado);
+        try (Scanner input = new Scanner(System.in)) {
+            ArrayList<String> convidados = new ArrayList<>();
+            String convidado;
+            
+            for ( int i = 0 ; i < 5 ; i ++){
+                System.out.println("Cadastre os nomes do convidados");
+                convidado = input.nextLine();
+                convidados.add(convidado);
+            }
+            
+            System.out.println("Qual nome voce deseja pesquisar");
+            String pesquisar = input.nextLine();
+            
+            
+            for ( int i = 0; i < convidados.size() ; i ++) {
+                if ( convidados.get(i).equalsIgnoreCase(pesquisar)) {
+                    System.out.println("Nome encontrado na posicao: " + i);
+                    
+                }
+            }
         }
-
-        System.out.println("Qual nome voce deseja pesquisar");
-        String pesquisar = input.nextLine();
-
-
-        for ( int i = 0; i < convidados.size() ; i ++) {
-            if ( convidados.get(i).equalsIgnoreCase(pesquisar)) {
-                System.out.println("Nome encontrado na posicao" + i);
-
-            } 
-
-        }
-
-
-
-        input.close();
 
         }
 
