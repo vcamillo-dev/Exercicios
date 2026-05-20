@@ -35,27 +35,27 @@ public class Exercicio38 {
             notas.add(9.5);
 
             boolean running = true;
-            while( running = true ){
-                System.out.println("Insira o Nome do aluno desejado");
+            while (running) {
+                System.out.println("Insira o nome do aluno desejado");
                 String nome = input.nextLine();
 
                 int found_index = -1;
-                for ( int i =  0 ; i<nomes.size(); i++){
-                    if ( nomes.get(i).equalsIgnoreCase(nome)){
+                for (int i = 0; i < nomes.size(); i++) {
+                    if (nomes.get(i).equalsIgnoreCase(nome)) {
                         found_index = i;
+                        break;
                     }
-
                 }
-                if ( found_index != -1 ){
+
+                if (found_index != -1) {
                     String nome_encontrado = nomes.get(found_index);
                     Double nota_encontrada = notas.get(found_index);
 
-                    System.out.println("A aluno : " + nome_encontrado + " tirou a nota " + nota_encontrada);
-
-                } else{
+                    System.out.println("O aluno(a) " + nome_encontrado + " tirou nota " + nota_encontrada);
                     running = false;
+                } else {
+                    System.out.println("Aluno não encontrado. Digite novamente!");
                 }
-
             }
 
             
