@@ -17,10 +17,10 @@
  * - O total de horas trabalhadas.
  * - O faturamento total estimando que o freelancer ganha R$ 50.0 por hora.
  */
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class exercicio43 {
+public class Exercicio43 {
     public static void main(String[] arg) {
         try (Scanner input = new Scanner(System.in)) {
 
@@ -28,21 +28,25 @@ public class exercicio43 {
             ArrayList<Double> horas = new ArrayList<>();
 
             int contador = 0;
-
             while (contador < 3) {
                 System.out.println("Insira o nome do projeto");
                 String projeto = input.nextLine();
                 projetos.add(projeto);
 
-                System.out.println("Insira a quantidade de horas gastas n esse projeto");
+                System.out.println("Insira a quantidade de horas gastas nesse projeto");
                 String horas_texto = input.nextLine();
                 Double horas_numero = Double.parseDouble(horas_texto);
                 horas.add(horas_numero);
-
                 contador++;
             }
+            double total_horas = 0.0;
+            int i ;
+            for ( i = 0; i < horas.size(); i++){
+                total_horas = total_horas + horas.get(i);
+            }
+            System.out.println("A lista de projetos eh: " + projetos);
+            System.out.println("O total de horas trabalhadas eh " + total_horas);
 
-            double total_horas;
 
        
         }

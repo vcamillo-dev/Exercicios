@@ -1,7 +1,7 @@
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class exercicio40 {
+public class Exercicio40 {
     public static void main(String[] arg){
 
         try (Scanner input = new Scanner(System.in)){

@@ -15,10 +15,10 @@
  * - Exiba: "Setor inválido. Digite novamente!".
  */
 
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class exercico39 {
+public class Exercicio39 {
     public static void main(String[] arg){
         try (Scanner input = new Scanner(System.in)) {
 

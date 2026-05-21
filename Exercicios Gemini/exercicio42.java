@@ -14,10 +14,10 @@
  * * 6. Exiba a lista de cidades visitadas e a soma total de litros gastos.
  */
 
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class exercicio42 {
+public class Exercicio42 {
     public static void main(String[] arg){
         try ( Scanner input = new Scanner(System.in)){
 
