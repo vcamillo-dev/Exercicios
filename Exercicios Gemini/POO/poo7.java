@@ -25,6 +25,10 @@ class ContaBancariaComSaque {
         this.saldo = this.saldo + valorDeposito;
     }
 
+    public void sacar(Double valorSaque){
+        this.saldo = this.saldo - valorSaque;
+    }
+
     // ====================================================================
     // REQUISITO 1: Crie o método de negócio 'sacar' aqui embaixo!
     // Ele deve ser 'public void sacar(Double valorSaque)' e, lá dentro,
@@ -37,11 +41,29 @@ public class poo7 {
     public static void main(String[] args) {
         try (Scanner input = new Scanner(System.in)) {
 
-            // REQUISITO 2 (LÓGICA DO MAIN):
-            // a) Peça o nome e o saldo inicial para criar a conta.
-            // b) Peça para o usuário digitar um valor para SACAR.
-            // c) Dê a ordem de saque para o objeto: c.sacar(valor_digitado);
-            // d) Mostre o saldo final usando o getSaldo() para conferir se o dinheiro sumiu da conta.
+            // 1. Pedimos o nome do titular
+            System.out.println("Insira o nome do titular:");
+            String nome = input.nextLine();
+
+            // CORREÇÃO AQUI: Pedir o saldo inicial da conta primeiro!
+            System.out.println("Insira o seu saldo inicial:");
+            String saldo_texto = input.nextLine();
+            Double saldo_numero = Double.parseDouble(saldo_texto);
+
+            // Agora sim, criamos a conta com o nome e o saldo inicial digitados
+            ContaBancariaComSaque c = new ContaBancariaComSaque(nome, saldo_numero);
+
+            // 2. Pedimos o valor do SAQUE
+            System.out.println("Insira o valor que deseja sacar:");
+            String saqueTexto = input.nextLine();
+            Double valor_digitado = Double.parseDouble(saqueTexto);
+
+            // 3. Damos a ordem de saque para o objeto inteligente
+            c.sacar(valor_digitado);
+
+            // 4. Mostramos o resultado final buscando direto do "cofre"
+            System.out.println("Saque realizado com sucesso!");
+            System.out.println("O valor final de saldo atualizado é : R$" + c.getSaldo());
             
         }
     }
