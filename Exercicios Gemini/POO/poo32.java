@@ -15,23 +15,27 @@ import java.util.Scanner;
  * 2. Construtor para receber ambos.
  * 3. GETTERS para ambos.
  */
-class UsuariosStreaming {
+class UsuarioStreaming {
     private String nome;
     private String tipoAssinatura;
 
-    public UsuariosStreaming (String nome, String tipoAssinatura){
+    public UsuarioStreaming (String nome, String tipoAssinatura){
         this.nome = nome;
         this.tipoAssinatura = tipoAssinatura;
     }
-    public String getNome(){
-        return this.nome;
-    }
-    public String getTipoAssinatura(){
-        return this.tipoAssinatura;
-    }
-    
-
+    public String getNome(){return this.nome;}
+    public String getTipoAssinatura(){return this.tipoAssinatura;}
 }
+class Filme{
+    private String titulo;
+    private boolean ehPremium;
+
+    public Filme(String titulo, boolean ehPremium){
+        this.titulo = titulo;
+        this.ehPremium = ehPremium;
+    }
+    public String getTitulo(){return this.titulo;}
+    public Boolean getEhPremium(){ return this.ehPremium;}
 /*
  * 4. MÉTODO DE NEGÓCIO 'autorizarAcesso' (ATENÇÃO: ele deve retornar um boolean!):
  * public boolean autorizarAcesso(UsuarioStreaming usuario) {
@@ -44,6 +48,18 @@ class UsuariosStreaming {
  * e retorne 'true'.
  * - REGRA 3 (Bloqueio): Caso contrário, mostre: "Erro: O filme [this.titulo] é exclusivo para assinantes PREMIUM. [usuario.getNome()] precisa fazer um upgrade!"
  * e retorne 'false'. */
+public boolean autorizarAcesso(UsuarioStreaming usuario){
+    if( this.ehPremium == false ){
+        System.out.println("Acesso liberado para " + usuario.getNome() + " o filme " + this.titulo + " e gratis ");
+        return true;
+    } else if (usuario.getTipoAssinatura().equals("PREMIUM")){
+        System.out.println("Acesso PREMIUM autorizado para " + usuario.getNome() + " para assistir " + this.titulo);
+        return true;
+    } else {
+        System.out.println("ERRO: O " + this.titulo + "e");
+    }
+}
+}
 
 /* REQUISITOS DO MAIN (poo29_5):
  * 1. Crie o Usuário 1: "Carlos", Assinatura: "FREE".
