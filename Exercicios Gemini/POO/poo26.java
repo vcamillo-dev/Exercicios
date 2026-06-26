@@ -20,7 +20,6 @@ import java.util.Scanner;
  * - SE 'this.temperatura' for MENOR que 15.0, retorne: "CRÍTICO: Muito frio!"
  * - SENÃO, retorne: "ESTÁVEL: Temperatura ideal."
 */
-
 class MonitorEstufa {
     private String nomePlanta;
     private Double temperatura;
@@ -79,6 +78,5 @@ public class poo26 {
             System.out.println(c.availiarStatus());
             
         }
-    }
-    
+    }    
 }
