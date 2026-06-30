@@ -18,9 +18,9 @@ import java.util.Scanner;
  * - Mostre na tela: "[this.nome] atacou [oponente.getNome()] causando [this.forcaAtaque] de dano!"
 */
 class PersonagemRPG {
-    private String nome;
+    private final String nome;
     private Integer pontosVida;
-    private Integer forcaAtaque;
+    private final Integer forcaAtaque;
 
     public PersonagemRPG(String nome, Integer pontosVida, Integer forcaAtaque) {
         this.nome = nome;
@@ -30,9 +30,10 @@ class PersonagemRPG {
     public String getNome(){ return this.nome; }
     public Integer getPontosVida() { return this.pontosVida; }
     public Integer getForcaAtaque() { return this.forcaAtaque; }
+    public void setPontosVida(Integer pontosVida) { this.pontosVida = pontosVida; }
 
     public void atacar(PersonagemRPG oponente){
-        oponente.pontosVida = oponente.pontosVida-this.forcaAtaque;
+        oponente.setPontosVida(oponente.getPontosVida() - this.forcaAtaque);
         System.out.println(this.nome + " atacou " + oponente.getNome() + " causando " + this.forcaAtaque + " de dano!");
     }
 }
@@ -48,8 +49,7 @@ REQUISITOS DO MAIN (poo29_2):
 
 public class poo29_2 {
     public static void main(String[] arg) {
-        try(@SuppressWarnings("unused")
-        Scanner input = new Scanner(System.in)){
+        try(Scanner input = new Scanner(System.in)){
             PersonagemRPG guerreiro = new PersonagemRPG("Thorin",100,25);
             PersonagemRPG monstro = new PersonagemRPG("Grunt", 80, 10);
 

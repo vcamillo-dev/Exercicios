@@ -25,9 +25,9 @@ package POO;
  * agora for menor ou igual a 0, mostre também: "[oponente.getNome()] foi derrotado!"
  */
 class PersonagemRPG {
-    private String nome;
+    private final String nome;
     private Integer pontosVida;
-    private Integer forcaAtaque;
+    private final Integer forcaAtaque;
 
     public PersonagemRPG(String nome, Integer pontosVida, Integer forcaAtaque) {
         this.nome = nome;
@@ -40,15 +40,15 @@ class PersonagemRPG {
 
     public void atacar(PersonagemRPG oponente){
         if ( this.pontosVida <= 0){
-            System.out.println("Erro: " + this.nome + " está morto e não pode atacar");
+            System.out.println("Erro: " + this.nome + " está morto e não pode atacar!");
         }else if (oponente.pontosVida <=0 ){
-            System.out.println("Erro: " + oponente.getNome() + "Já está derrotado!");
+            System.out.println("Erro: " + oponente.getNome() + " já está derrotado!");
         }else {
             oponente.pontosVida = oponente.pontosVida - this.forcaAtaque;
-            System.out.println(this.nome + "atacou " + oponente.getNome() + " causando " + this.forcaAtaque);
+            System.out.println(this.nome + " atacou " + oponente.getNome() + " causando " + this.forcaAtaque + " de dano!");
         }
         if(oponente.pontosVida <=0 ){
-            System.out.println(oponente.getNome() + " foi derrotado" );
+            System.out.println(oponente.getNome() + " foi derrotado!");
         }
     }    
 }

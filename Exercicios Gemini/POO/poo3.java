@@ -49,7 +49,8 @@ public class poo3 {
             System.out.println("Insira o nome do produto:");
             String nome = input.nextLine();
             System.out.println("Insira o valor:");
-            Double valor = Double.parseDouble(input.nextLine());
+            // Use Double.valueOf to obtain a Double directly (avoids unnecessary primitive-to-boxing)
+            Double valor = Double.valueOf(input.nextLine());
 
             // Cria o objeto normalmente
             ProdutoEncapsulado p = new ProdutoEncapsulado(nome, valor);

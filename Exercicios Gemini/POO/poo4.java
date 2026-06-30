@@ -12,13 +12,13 @@
 package POO;
 import java.util.Scanner;
 
-class ProdutoEncapsulado {
+class ProdutoEncapsulado1 {
     // 1. Atributos trancados
     private String nome;
     private Double valor;
 
     // Construtor continua igual
-    public ProdutoEncapsulado(String nome, Double valor) {
+    public ProdutoEncapsulado1(String nome, Double valor) {
         this.nome = nome;
         this.valor = valor;
     }
@@ -49,10 +49,10 @@ public class poo4 {
             System.out.println("Insira o nome do produto:");
             String nome = input.nextLine();
             System.out.println("Insira o valor:");
-            Double valor = Double.parseDouble(input.nextLine());
+            double valor = Double.parseDouble(input.nextLine());
 
             // Cria o objeto normalmente
-            ProdutoEncapsulado p = new ProdutoEncapsulado(nome, valor);
+            ProdutoEncapsulado1 p = new ProdutoEncapsulado1(nome, valor);
 
             // DESAFIO:
             // Tente printar na tela o nome e o valor desse produto 'p' 
@@ -63,10 +63,7 @@ public class poo4 {
             System.out.println("O valor do produto cadastrado foi: " + p.getValor() );
 
             System.out.println("Insira o novo preco do produto com 10% de desconto");
-            String novoValorTexto = input.nextLine();
-            Double novoValorNumero = Double.parseDouble(novoValorTexto);
-
-            p.setValor(novoValorNumero);
+            p.setValor(Double.valueOf(input.nextLine()));
 
             System.out.println("Produto: " + p.getNome());
             System.out.println("Preco ATUALIZADO com desconto: " + p.getValor());
